@@ -12,13 +12,13 @@
     />
     <style>
       :root {
-        --bg-deep: #0c1222;
+        --bg-deep: #151515;
         --bg-card: rgba(255, 255, 255, 0.06);
-        --border: rgba(125, 211, 252, 0.2);
-        --text: #e8eef8;
-        --text-muted: #94a3b8;
-        --accent: #38bdf8;
-        --accent-strong: #0ea5e9;
+        --border: rgba(200, 200, 200, 0.24);
+        --text: #f2f2f2;
+        --text-muted: #b3b3b3;
+        --accent: #d9d9d9;
+        --accent-strong: #a6a6a6;
         --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
       }
 
@@ -52,9 +52,10 @@
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(160deg, rgba(12, 18, 34, 0.92) 0%, rgba(12, 18, 34, 0.75) 45%, rgba(14, 165, 233, 0.25) 100%),
+          linear-gradient(160deg, rgba(20, 20, 20, 0.92) 0%, rgba(20, 20, 20, 0.75) 45%, rgba(130, 130, 130, 0.28) 100%),
           url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80")
             center / cover no-repeat;
+        filter: grayscale(100%);
       }
 
       .hero__inner {
@@ -78,7 +79,7 @@
       .menu-nav label {
         display: block;
         margin-bottom: 0.4rem;
-        color: #cbd5e1;
+        color: #cfcfcf;
         font-size: 0.9rem;
       }
 
@@ -87,7 +88,7 @@
         padding: 0.55rem 0.75rem;
         border-radius: 8px;
         border: 1px solid var(--border);
-        background: rgba(15, 23, 42, 0.8);
+        background: rgba(35, 35, 35, 0.9);
         color: var(--text);
         font: inherit;
       }
@@ -132,7 +133,7 @@
         margin: 1.75rem 0 0.85rem;
         font-size: 1.15rem;
         font-weight: 600;
-        color: #f1f5f9;
+        color: #e6e6e6;
       }
 
       main p {
@@ -172,19 +173,19 @@
         font-family: inherit;
         font-size: 0.95rem;
         font-weight: 600;
-        color: #0c1222;
+        color: #161616;
         background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
         border: none;
         border-radius: 999px;
         cursor: pointer;
         text-decoration: none;
-        box-shadow: 0 8px 28px rgba(14, 165, 233, 0.35);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 36px rgba(14, 165, 233, 0.45);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
       }
 
       .btn:active {
@@ -202,7 +203,7 @@
         text-align: center;
         color: var(--text-muted);
         font-size: 0.875rem;
-        border-top: 1px solid rgba(148, 163, 184, 0.12);
+        border-top: 1px solid rgba(190, 190, 190, 0.16);
         background: rgba(0, 0, 0, 0.25);
       }
 

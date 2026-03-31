@@ -12,10 +12,9 @@
     />
     <style>
       :root {
-        --bg-deep: #0c1222;
-        --accent: #38bdf8;
-        --accent-strong: #0ea5e9;
-        --text: #e8eef8;
+        --bg-deep: #151515;
+        --text: #f2f2f2;
+        --border: rgba(200, 200, 200, 0.28);
       }
 
       * {
@@ -27,7 +26,7 @@
         min-height: 100vh;
         display: grid;
         place-items: center;
-        background: radial-gradient(circle at top, #172554, var(--bg-deep));
+        background: radial-gradient(circle at top, #4a4a4a, var(--bg-deep));
         color: var(--text);
         font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       }
@@ -35,6 +34,7 @@
       .container {
         text-align: center;
         padding: 2rem;
+        width: min(100%, 760px);
       }
 
       .menu-nav {
@@ -45,7 +45,7 @@
       .menu-nav label {
         display: block;
         margin-bottom: 0.45rem;
-        color: #cbd5e1;
+        color: #d0d0d0;
         font-size: 0.9rem;
       }
 
@@ -53,8 +53,8 @@
         width: 100%;
         padding: 0.6rem 0.75rem;
         border-radius: 8px;
-        border: 1px solid rgba(56, 189, 248, 0.35);
-        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid var(--border);
+        background: rgba(35, 35, 35, 0.9);
         color: var(--text);
         font: inherit;
       }
@@ -64,25 +64,41 @@
         font-size: clamp(1.5rem, 4vw, 2rem);
       }
 
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.9rem 1.6rem;
-        font-size: 1rem;
-        font-weight: 700;
-        color: #0c1222;
-        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-        border: none;
-        border-radius: 999px;
-        text-decoration: none;
-        box-shadow: 0 10px 28px rgba(14, 165, 233, 0.35);
-        transition: transform 0.2s ease;
+      .upload-card {
+        margin: 1.25rem auto 0;
+        width: min(100%, 520px);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(28, 28, 28, 0.78);
+        padding: 1rem;
       }
 
-      .btn:hover {
-        transform: translateY(-2px);
+      .upload-card p {
+        margin: 0 0 0.9rem;
+        color: #d6d6d6;
       }
+
+      .file-input {
+        display: none;
+      }
+
+      .btn-file {
+        display: inline-block;
+        padding: 0.65rem 1.1rem;
+        border-radius: 8px;
+        border: 1px solid #8e8e8e;
+        background: linear-gradient(180deg, #cdcdcd, #9c9c9c);
+        color: #111;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .file-name {
+        margin-top: 0.85rem;
+        font-size: 0.95rem;
+        color: #c9c9c9;
+      }
+
     </style>
   </head>
   <body>
@@ -95,6 +111,29 @@
         </select>
       </div>
       <h1>Pagina Secundaria</h1>
+      <section class="upload-card" aria-labelledby="titulo-upload">
+        <p id="titulo-upload">Selecionar arquivo externo de dados cadastrados</p>
+        <label class="btn-file" for="arquivo-dados">Escolher arquivo externo</label>
+        <input
+          class="file-input"
+          type="file"
+          id="arquivo-dados"
+          accept=".xlsx,.xls,.csv"
+        />
+        <div class="file-name" id="nome-arquivo">Nenhum arquivo selecionado.</div>
+      </section>
     </main>
+    <script>
+      const inputArquivo = document.getElementById("arquivo-dados");
+      const nomeArquivo = document.getElementById("nome-arquivo");
+
+      inputArquivo.addEventListener("change", function () {
+        if (this.files && this.files.length > 0) {
+          nomeArquivo.textContent = "Arquivo selecionado: " + this.files[0].name;
+          return;
+        }
+        nomeArquivo.textContent = "Nenhum arquivo selecionado.";
+      });
+    </script>
   </body>
 </html>
