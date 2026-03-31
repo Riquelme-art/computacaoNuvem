@@ -71,6 +71,27 @@
         letter-spacing: -0.02em;
       }
 
+      .menu-nav {
+        margin-top: 0.9rem;
+      }
+
+      .menu-nav label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+      }
+
+      .menu-nav select {
+        width: min(100%, 260px);
+        padding: 0.55rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.8);
+        color: var(--text);
+        font: inherit;
+      }
+
       .wrap {
         flex: 1;
         max-width: 900px;
@@ -196,6 +217,13 @@
       <div class="hero__inner">
         <header>
           <strong>Computação em Nuvem</strong>
+          <div class="menu-nav">
+            <label for="page-nav">Navegar entre páginas</label>
+            <select id="page-nav" onchange="if(this.value) window.location.href=this.value;">
+              <option value="index.html" selected>Página inicial</option>
+              <option value="secundaria.html">Página secundária</option>
+            </select>
+          </div>
         </header>
       </div>
     </div>
@@ -224,9 +252,6 @@
           <li>Computação serverless (ex.: AWS Lambda, Azure Functions)</li>
           <li>Plataformas de hospedagem de aplicações (ex.: Vercel, Netlify, Heroku)</li>
         </ul>
-        <div class="actions">
-          <a class="btn" href="secundaria.html">Ir para a página secundária</a>
-        </div>
         <div class="actions">
           <a
             class="btn"

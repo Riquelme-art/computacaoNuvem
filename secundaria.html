@@ -37,6 +37,28 @@
         padding: 2rem;
       }
 
+      .menu-nav {
+        margin: 0 auto 1.25rem;
+        width: min(100%, 280px);
+      }
+
+      .menu-nav label {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+      }
+
+      .menu-nav select {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        background: rgba(15, 23, 42, 0.8);
+        color: var(--text);
+        font: inherit;
+      }
+
       h1 {
         margin: 0 0 1.25rem;
         font-size: clamp(1.5rem, 4vw, 2rem);
@@ -65,8 +87,14 @@
   </head>
   <body>
     <main class="container">
+      <div class="menu-nav">
+        <label for="page-nav">Navegar entre páginas</label>
+        <select id="page-nav" onchange="if(this.value) window.location.href=this.value;">
+          <option value="index.html">Página inicial</option>
+          <option value="secundaria.html" selected>Página secundária</option>
+        </select>
+      </div>
       <h1>Pagina Secundaria</h1>
-      <a class="btn" href="index.html">Voltar para a pagina inicial</a>
     </main>
   </body>
 </html>
