@@ -1,0 +1,13 @@
+{
+  "name": "controle-financeiro",
+  "version": "1.0.0",
+  "description": "Controle de Fluxo de Caixa Simples",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "better-sqlite3": "^9.4.3"
+  }
+}
