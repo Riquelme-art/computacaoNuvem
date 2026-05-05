@@ -9,8 +9,17 @@
 </head>
 <body>
   <header>
-    <h1>Fluxo de Caixa</h1>
-    <p>Controle suas finanças de forma simples</p>
+    <div class="header-top">
+      <div>
+        <h1>Fluxo de Caixa</h1>
+        <p>Controle suas finanças de forma simples</p>
+      </div>
+      <div class="header-usuario">
+        <span id="usuario-nome"></span>
+        <span id="usuario-badge" class="badge"></span>
+        <button class="btn-sair" id="btn-sair" onclick="sair()">Sair</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -63,6 +72,14 @@
       <h2>Movimentações</h2>
       <ul id="lista-movimentacoes" aria-label="Lista de movimentações">
         <li class="vazio">Nenhuma movimentação registrada.</li>
+      </ul>
+    </section>
+
+    <!-- Painel admin: gerenciar usuários -->
+    <section class="lista" id="painel-admin" style="display:none" aria-label="Gerenciar usuários">
+      <h2>Usuários cadastrados</h2>
+      <ul id="lista-usuarios" aria-label="Lista de usuários">
+        <li class="vazio">Carregando...</li>
       </ul>
     </section>
   </main>

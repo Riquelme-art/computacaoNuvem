@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login - Controle de Fluxo de Caixa Simples" />
+  <title>Login | Fluxo de Caixa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Fluxo de Caixa</h1>
+    <p>Controle suas finanças de forma simples</p>
+  </header>
+
+  <main>
+    <section class="formulario" aria-label="Acesso ao sistema">
+
+      <!-- Abas -->
+      <div class="abas" role="tablist">
+        <button class="aba ativa" id="aba-login" role="tab" aria-selected="true" onclick="trocarAba('login')">Entrar</button>
+        <button class="aba" id="aba-cadastro" role="tab" aria-selected="false" onclick="trocarAba('cadastro')">Criar conta</button>
+      </div>
+
+      <!-- Login -->
+      <form id="form-login" novalidate>
+        <div class="campo">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required autocomplete="email" />
+        </div>
+        <div class="campo">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" placeholder="••••••" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+        <div id="feedback-login" class="feedback" role="alert" aria-live="polite"></div>
+      </form>
+
+      <!-- Cadastro -->
+      <form id="form-cadastro" novalidate style="display:none">
+        <div class="campo">
+          <label for="cad-nome">Nome</label>
+          <input type="text" id="cad-nome" placeholder="Seu nome completo" required autocomplete="name" />
+        </div>
+        <div class="campo">
+          <label for="cad-email">E-mail</label>
+          <input type="email" id="cad-email" placeholder="seu@email.com" required autocomplete="email" />
+        </div>
+        <div class="campo">
+          <label for="cad-senha">Senha</label>
+          <input type="password" id="cad-senha" placeholder="Mínimo 6 caracteres" required autocomplete="new-password" minlength="6" />
+        </div>
+        <button type="submit" class="btn-primary">Criar conta</button>
+        <div id="feedback-cadastro" class="feedback" role="alert" aria-live="polite"></div>
+      </form>
+
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -227,3 +227,127 @@ input:focus, select:focus {
   header h1 { font-size: 1.75rem; }
   .card .valor { font-size: 1.125rem; }
 }
+
+/* ── Auth: abas ──────────────────────────────────────────────────────────── */
+.abas {
+  display: flex;
+  border-bottom: 2px solid var(--cinza-borda);
+  margin-bottom: 1.25rem;
+}
+
+.aba {
+  flex: 1;
+  padding: 0.625rem;
+  background: none;
+  border: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--texto-suave);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.aba.ativa {
+  color: var(--azul);
+  border-bottom-color: var(--azul);
+}
+
+/* ── Header com usuário ──────────────────────────────────────────────────── */
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-usuario {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#usuario-nome {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-admin   { background: #fef3c7; color: #92400e; }
+.badge-usuario { background: #dbeafe; color: #1e40af; }
+.badge-voce    { background: var(--cinza-borda); color: var(--texto-suave); font-size: 0.65rem; padding: 0.15rem 0.4rem; border-radius: 999px; font-weight: 600; }
+
+.btn-sair {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--branco);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sair:hover { background: rgba(255,255,255,0.25); }
+
+/* ── Item de usuário (painel admin) ──────────────────────────────────────── */
+.item-usuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 0.75rem;
+  border-radius: 8px;
+  background: var(--cinza-bg);
+  gap: 0.5rem;
+}
+
+.usuario-acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+}
+
+.btn-tipo {
+  background: none;
+  border: 1.5px solid var(--cinza-borda);
+  color: var(--texto-suave);
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-tipo:hover { border-color: var(--azul); color: var(--azul); }
+
+.item-autor {
+  margin-left: 0.375rem;
+  font-size: 0.7rem;
+  color: var(--texto-suave);
+  background: var(--cinza-borda);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.btn-remover-placeholder { width: 1.875rem; }
